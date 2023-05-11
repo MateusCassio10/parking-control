@@ -6,7 +6,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "TB_PARKING_SPOT")
-public class ParkingSpot {
+public class ParkingSpotModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -37,10 +37,10 @@ public class ParkingSpot {
     @Column(nullable = false, length = 70)
     private String block;
 
-    public ParkingSpot() {
+    public ParkingSpotModel() {
     }
 
-    public ParkingSpot(Long id, String parkingSpotNumber, String licensePlateCar, String brandCar, String modelCar, String colorCar, LocalDateTime registrationDate, String responsibleName, String apartment, String block) {
+    public ParkingSpotModel(Long id, String parkingSpotNumber, String licensePlateCar, String brandCar, String modelCar, String colorCar, LocalDateTime registrationDate, String responsibleName, String apartment, String block) {
         this.id = id;
         this.parkingSpotNumber = parkingSpotNumber;
         this.licensePlateCar = licensePlateCar;
@@ -137,7 +137,7 @@ public class ParkingSpot {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ParkingSpot that = (ParkingSpot) o;
+        ParkingSpotModel that = (ParkingSpotModel) o;
         return Objects.equals(id, that.id);
     }
 
